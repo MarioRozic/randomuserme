@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "../../utils/media";
 
 const CardBox = styled.div`
   height: 100px;
@@ -12,6 +13,12 @@ const CardBox = styled.div`
   transition: 0.3s;
   user-select: none;
   cursor: pointer;
+
+  ${media.desktop`
+    height: 150px;
+    width: 520px;
+    float: left;
+  `};
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -35,6 +42,10 @@ const CardText = styled.div`
   margin-left: 15px;
   width: 350px;
   padding: 25px 0;
+
+  ${media.desktop`
+    padding: 50px 0;
+  `};
 `;
 
 const CardContent = styled.span`

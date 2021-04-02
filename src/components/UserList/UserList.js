@@ -5,6 +5,7 @@ import Spinner from "../../containers/Spinner";
 import UserCard from "../../containers/UserCard";
 
 import { GetUser, GetUserList } from "../API/Users";
+import { UserListBox } from "./UserList.style";
 
 export default function UserList() {
   const queryClient = useQueryClient();
@@ -20,7 +21,7 @@ export default function UserList() {
       {isLoading ? (
         <Spinner />
       ) : (
-        <>
+        <UserListBox>
           {data.map((user, index) => (
             <UserCard
               key={index}
@@ -36,7 +37,7 @@ export default function UserList() {
               }}
             />
           ))}
-        </>
+        </UserListBox>
       )}
     </div>
   );
