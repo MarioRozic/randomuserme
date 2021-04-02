@@ -7,6 +7,7 @@ const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+  background: #fff;
 `;
 
 const IconPlaceholder = styled.div`

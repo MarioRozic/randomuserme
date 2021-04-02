@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import Header from "../../containers/Header";
+import Spinner from "../../containers/Spinner";
 import UserCard from "../../containers/UserCard";
 
 import { GetUserList } from "../API/Users";
@@ -15,7 +16,7 @@ export default function UserList() {
     <div>
       <Header />
       {isLoading ? (
-        <span>Loading...</span>
+        <Spinner />
       ) : (
         <>
           {data.map((user, index) => (

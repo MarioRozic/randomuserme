@@ -5,7 +5,7 @@ const CardBox = styled.div`
   margin: 15px;
   background: #ffffff;
   display: flex;
-  border: 1px solid #f2f1f3;
+  border: 1px solid #a6adb4;
   box-sizing: border-box;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

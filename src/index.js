@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
@@ -8,6 +9,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { GlobalStyle } from "./index.style";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +17,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
         <App />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

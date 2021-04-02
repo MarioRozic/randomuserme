@@ -1,6 +1,4 @@
 import Layout from "./components/Layout";
-import UserList from "./components/UserList";
-import Header from "./containers/Header";
 
 function App() {
   return (
