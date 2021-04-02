@@ -1,12 +1,14 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import Header from "../../containers/Header";
 import Spinner from "../../containers/Spinner";
 import UserCard from "../../containers/UserCard";
 
-import { GetUserList } from "../API/Users";
+import { GetUser, GetUserList } from "../API/Users";
 
 export default function UserList() {
+  const queryClient = useQueryClient();
+
   const { data, isLoading } = useQuery("userList", GetUserList, {
     refetchOnWindowFocus: false,
     staleTime: Infinity,
@@ -20,7 +22,19 @@ export default function UserList() {
       ) : (
         <>
           {data.map((user, index) => (
-            <UserCard key={index} user={user} />
+            <UserCard
+              key={index}
+              user={user}
+              handleHover={() => {
+                queryClient.prefetchQuery(
+                  ["user", user.id],
+                  () => GetUser(user.id),
+                  {
+                    staleTime: 50000,
+                  }
+                );
+              }}
+            />
           ))}
         </>
       )}
