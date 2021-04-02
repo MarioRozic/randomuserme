@@ -5,9 +5,12 @@ import { ReactComponent as DeptLogo } from "../../logo.svg";
 import { Header as HeaderBar, Icon, Logo, NoIcon } from "./Header.style";
 
 import { MdArrowBack } from "react-icons/md";
+import { useIsFetching } from "react-query";
+import Spinner from "../Spinner";
 
 export default function Header({ enableBack }) {
-  let history = useHistory();
+  const history = useHistory();
+  const isFetching = useIsFetching();
 
   function handleClick() {
     history.goBack();
@@ -28,7 +31,7 @@ export default function Header({ enableBack }) {
         </Logo>
 
         {/* for optiosn later on */}
-        <Icon></Icon>
+        <Icon>{isFetching ? <Spinner size={30} type /> : null}</Icon>
       </HeaderBar>
     </>
   );
