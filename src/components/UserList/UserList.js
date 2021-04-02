@@ -8,11 +8,8 @@ import { GetUserList } from "../API/Users";
 export default function UserList() {
   const { data, isLoading } = useQuery("userList", GetUserList, {
     refetchOnWindowFocus: false,
+    staleTime: Infinity,
   });
-
-  useEffect(() => {
-    console.log("mounted", data);
-  }, [data]);
 
   return (
     <div>

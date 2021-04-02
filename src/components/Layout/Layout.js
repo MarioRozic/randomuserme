@@ -10,7 +10,7 @@ export default function Layout() {
         <Route exact path="/">
           <UserList />
         </Route>
-        <Route path="/user-details">
+        <Route path="/user-details/:id">
           <UserDetails />
         </Route>
       </Switch>

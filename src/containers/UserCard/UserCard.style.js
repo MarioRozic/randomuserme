@@ -33,7 +33,7 @@ const Image = styled.img`
 
 const CardText = styled.div`
   margin-left: 15px;
-  width: 300px;
+  width: 350px;
   padding: 25px 0;
 `;
 

@@ -31,4 +31,23 @@ const GetUserList = async () => {
   return userList;
 };
 
-export { GetUserList };
+// ne koristim, ne valja joj response
+const GetUser = async (id) => {
+  const {
+    data: {
+      info: { seed },
+      results: { ...rest },
+    },
+  } = await axios.get(
+    `${API_BASE_URL}?inc=picture,name,dob,location,email,phone,login&seed=${id}`
+  );
+
+  let userObject = {
+    id: seed,
+    ...rest[0],
+  };
+
+  return userObject;
+};
+
+export { GetUserList, GetUser };
