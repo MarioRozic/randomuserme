@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -9,7 +9,15 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background: #f0f2f5;
+        overflow: hidden;
     }
 `;
 
-export { GlobalStyle };
+const Container = styled.div`
+  padding-top: 50px;
+  overflow: auto;
+  height: 100vh;
+  box-sizing: border-box;
+`;
+
+export { GlobalStyle, Container };
