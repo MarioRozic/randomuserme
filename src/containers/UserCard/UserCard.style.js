@@ -39,7 +39,8 @@ const CardText = styled.div`
 
 const CardContent = styled.span`
   display: inline-block;
-  width: ${(props) => (props.width ? props.width : "200px")};
+  width: ${(props) => (props.isTitle ? "" : "200px")};
+  margin-right: ${(props) => (props.isTitle ? "10px" : "")};
   font-size: 20px;
   font-weight: 600;
 `;
