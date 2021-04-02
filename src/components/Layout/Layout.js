@@ -5,7 +5,7 @@ import UserDetails from "../UserDetails";
 
 export default function Layout() {
   return (
-    <div>
+    <>
       <Switch>
         <Route exact path="/">
           <UserList />
@@ -14,6 +14,6 @@ export default function Layout() {
           <UserDetails />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 }

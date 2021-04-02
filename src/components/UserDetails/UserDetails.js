@@ -19,7 +19,7 @@ export default function UserDetails() {
   }
 
   return (
-    <div>
+    <>
       <Header enableBack />
       {isLoading ? (
         <Spinner />
@@ -42,6 +42,6 @@ export default function UserDetails() {
           <Text>{data.phone}</Text>
         </DetailsBox>
       )}
-    </div>
+    </>
   );
 }

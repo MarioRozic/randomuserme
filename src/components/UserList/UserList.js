@@ -16,7 +16,7 @@ export default function UserList() {
   });
 
   return (
-    <div>
+    <>
       <Header />
       {isLoading ? (
         <Spinner />
@@ -39,6 +39,6 @@ export default function UserList() {
           ))}
         </UserListBox>
       )}
-    </div>
+    </>
   );
 }
