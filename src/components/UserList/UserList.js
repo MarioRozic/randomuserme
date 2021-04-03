@@ -30,8 +30,8 @@ export default function UserList() {
                 user={user}
                 handleHover={() => {
                   queryClient.prefetchQuery(
-                    ["user", user.id],
-                    () => GetUser(user.id),
+                    ["user", user.uuid],
+                    () => GetUser(user.uuid),
                     {
                       staleTime: 50000,
                     }

@@ -9,11 +9,14 @@ import {
   Image,
 } from "./UserCard.style";
 
-export default function UserCard({ user: { picture, name, id }, handleHover }) {
+export default function UserCard({
+  user: { picture, name, uuid },
+  handleHover,
+}) {
   let history = useHistory();
 
   function handleClick() {
-    history.push(`/user-details/${id}`);
+    history.push(`/user-details/${uuid}`);
   }
   return (
     <CardBox onClick={handleClick} onMouseEnter={handleHover}>
